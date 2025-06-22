@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles.css" />
+    <title>home</title>
+    </head>
+      <body>
+      <!-- Loader -->
+      <div id="loader">
+      <div class="spinner"></div>
+      </div>
+      <header>
+      <button id="toggle-mode">Dark Mode</button>
+      <nav>
+      <div class="nav__header">
+      <div class="nav__logo">
+      <a href="contact.html">📞</a>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+      </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+      <li><a href="index .html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="ride.html">Ride</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__btn">
+      <a href="assets/index.html"><button class="btn">Login</button></a>
+      </div>
+      </nav>
+      
+      <div>
+      <img src="assets/Daniel.jpg" alt="Daniel Profile " class="profile">
+      </div>
+      
+      <div class="header__container" id="Home">
+      <div id="intro">HELLO THERE!</div>
+      <h3>
+      <span id="typing-text"></span><span class="cursor"></span>
+      </h3>
+      <p id="subtext" >
+      I specialize in creating modern, user-friendly 
+      websites with clean code and responsive design. 
+      Whether you’re launching a new idea or upgrading
+      your digital presence, I bring creativity and 
+      technical skill to help you stand out online.
+      </p>
+      <h1 >DANNY CAR RENTAL</h1>
+      <form action="/">
+      <div class="input__group">
+      <label for="location">Pick up & Return location</label>
+      <input
+      type="text"
+      name="location"
+      id="location"
+      placeholder="Sakina"
+       />
+      </div>
+      <div class="input__group">
+      <label for="start">Start</label>
+      <input
+      type="text"
+      name="start"
+      id="start"
+      placeholder="June 16, 10:00 AM"
+      />
+      </div>
+      <div class="input__group">
+      <label for="stop">Stop</label>
+      <input
+      type="text"
+      name="stop"
+      id="stop"
+      placeholder="June 18, 10:00 PM"
+      />
+      </div>
+      <button class="btn" id="searchButton" type="button">🔍 Search
+      </button>
+      <!-- Confirmation message (initially hidden) -->
+      <div id="confirmationMessage" style="display: none; margin-top: 20px; padding: 15px; background-color: #e0ffe0; border: 1px solid #00aa00; border-radius: 5px;">
+      ✅ Your ride has been booked! Check your email for details.
+      </div>
+      </form>
+      <ul class="menu">
+      <li>
+      <p><b>My Bio😎</b></p>
+      <img src="assets/arrow-down.png" alt="icon for down arrow" />
+      <ul class="submenu">
+        <li>danel.nnko@icloud.com</li>
+      <li>Daniel Elibariki Nnko</li>
+      <li>+255733924329</li>
+      <li>daniel.ennko</li>
+      <li>Arusha</li>
+      </ul>
+      </li>
+      </ul>
+      <img src="assets/select-3.png" alt="header"/>
+      </div>
+      <a href="about.html" class="scroll__down">
+      <i class="ri-arrow-down-line"></i>
+      </a>
+      </header>
+      <script>
+      const text = "I'm Daniel Elibariki Nnko\n Web Developer in Tanzania.";
+      const typingElement = document.getElementById("typing-text");
+      const subtext = document.getElementById("subtext");
+      let index = 0;
+      function typeChar() {
+      if (index < text.length) {
+      typingElement.innerHTML += text.charAt(index) === "\n" ? "<br>" : text.charAt(index);
+      index++;
+      setTimeout(typeChar, 50);
+      } else {
+      subtext.classList.add("show");
+      }
+      }
+      // Wait a fixed time before starting
+      window.onload = function () {
+      setTimeout(() => {
+      // Hide the loader after 3 seconds
+      document.getElementById("loader").style.display = "none";
+      // Start typing effect
+      typeChar();
+      }, 2000); // 2000ms = 2 seconds 
+      };
+      document.getElementById("searchButton").addEventListener("click", function () {
+      // Show the confirmation message
+      document.getElementById("confirmationMessage").style.display = "block";
+      // Optionally scroll to it
+      document.getElementById("confirmationMessage").scrollIntoView({ behavior: "smooth" });
+      });
+      document.getElementById("toggle-mode").addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+      });
+      </script> 
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="main.js"></script>
+  </body>
+</html>
